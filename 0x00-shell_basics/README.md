@@ -1,1 +1,1 @@
-Lists all files even in boo directory
+Prints the type of a file
