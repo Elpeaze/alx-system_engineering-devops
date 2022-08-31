@@ -1,1 +1,1 @@
-List all files with numbers and hidden
+To make a directory in a directory
