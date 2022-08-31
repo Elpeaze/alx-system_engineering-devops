@@ -1,1 +1,1 @@
-Lists files in long format
+List files in long format
