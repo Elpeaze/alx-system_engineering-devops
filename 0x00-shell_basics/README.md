@@ -1,1 +1,1 @@
-List all files including hidden files
+List all files with numbers and hidden
