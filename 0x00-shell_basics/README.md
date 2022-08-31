@@ -1,1 +1,1 @@
-Changes working directory
+Lists files in long format
