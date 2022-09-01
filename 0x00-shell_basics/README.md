@@ -1,1 +1,1 @@
-Create multiple directories
+List all files and directories of current directory
