@@ -1,1 +1,1 @@
-To print the effective username of th user
+To print all groups
