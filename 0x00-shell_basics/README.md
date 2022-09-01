@@ -1,1 +1,1 @@
-Moving all files
+Delete files with special characters
