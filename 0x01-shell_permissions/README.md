@@ -1,1 +1,1 @@
-Script granting multiple permissions
+To change owner and group owner permissions
