@@ -1,1 +1,1 @@
-To play the starwars iv
+To grant multiple permissions
