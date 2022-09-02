@@ -1,1 +1,1 @@
-To grant multiple permissions
+Script to grant multiple permissions
