@@ -1,1 +1,1 @@
-More on basic knowledge in shell
+About shell I/O redirections
