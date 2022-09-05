@@ -1,1 +1,1 @@
-Script that deletes all the regular files with .js extension
+Script to display lines containing the pattern root
