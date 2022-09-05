@@ -1,1 +1,1 @@
-To display the last ten lines of a file
+To list the last ten lines of a file
