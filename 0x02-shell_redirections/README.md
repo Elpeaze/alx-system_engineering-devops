@@ -1,1 +1,1 @@
-To view two files
+To display the last ten lines of a file
