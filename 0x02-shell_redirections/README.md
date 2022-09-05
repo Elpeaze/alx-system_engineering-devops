@@ -1,1 +1,1 @@
-To display the first three lines of a file
+ Script that dupicates the last line of the file
