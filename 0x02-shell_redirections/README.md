@@ -1,1 +1,1 @@
- Script that dupicates the last line of the file
+Script that deletes all the regular files with .js extension
