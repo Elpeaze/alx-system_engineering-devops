@@ -1,1 +1,1 @@
-A script to print a program with new line
+A script to print a confused smiley
