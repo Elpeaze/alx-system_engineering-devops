@@ -1,1 +1,1 @@
-Script that list all the files with .git extension
+Script that passes we server logs
