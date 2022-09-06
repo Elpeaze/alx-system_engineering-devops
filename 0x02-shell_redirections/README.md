@@ -1,1 +1,1 @@
-Script that passes we server logs
+Script to replace all characters specified
