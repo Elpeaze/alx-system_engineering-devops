@@ -1,1 +1,1 @@
-Script tha reverse inputs
+Script that list all the files with .git extension
