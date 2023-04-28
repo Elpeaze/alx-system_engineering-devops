@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Installs Nginx with the following configurations.
+
+# Install Nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
+
+string_for_replacement="server_name _;\n\terror_page 404 \/404.html;\nlocation = \/404.html {\n\t\troot \/etc\/nginx\/html;\n\t\tinternal;\n\t}"sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+
+# code for http_response_header
+sudo sed -i 's/# SSL configuration/add_header X-Served-By '\''$hostname'\'';\n\t# SSL configuration/' /etc/nginx/sites-enabled/default
+
+# Restart Nginx
+service nginx restart
+
+
