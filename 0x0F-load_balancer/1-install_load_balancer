@@ -17,4 +17,4 @@ backend elpeaze
 
 sudo sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
 
-sudo service haproxy restar
+sudo service haproxy restart
