@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# This script querries the DNS (domain name system) and returns information on the querried domain.
 func ()
 {
 	res=$(dig "$2.$1" | grep -A1 "ANSWER SECTION:" | tail -1)
