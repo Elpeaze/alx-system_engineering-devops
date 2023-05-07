@@ -12,8 +12,8 @@ frontend GodsBook-frontend
 
 backend GodsBook-backend
         balance roundrobin
-        server 145153-web-01 100.26.9.127 check
-	server 145153-web-02 52.3.244.232 check
+        server 145153-web-01 100.26.9.127:80 check
+	server 145153-web-02 52.3.244.232:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 sudo sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
