@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This bash script accepts one argument and returns the comand 'whoami' under the user passed as an argument.
+sudo -u "$1" whoami
