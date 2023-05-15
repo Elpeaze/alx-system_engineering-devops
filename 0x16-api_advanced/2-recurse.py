@@ -1,27 +1,37 @@
 #!/usr/bin/python3
-"""
-This function queries the Reddit API and returns
-a list containing the titles of all hot articles
-for a given subreddit. If no results are found
-for the given subreddit, the function should
-return None.
-"""
+""" recursive function that queries the Reddit API and
+returns a list containing the titles of all hot articles
+for a given subreddit. """
+
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
-    url = "https://www.reddit.com/r/{}/hot/.json?after={}".format
-    (subreddit, after)
-    headers = {"User-Agent": "custom"}
+def recurse(subreddit, hot_list=[], after='', count=0):
+    """ recursive function that queries the Reddit API and
+    returns a list containing the titles of all hot articles
+    for a given subreddit. """
 
-    data = requests.get(url, headers=headers, allow_redirects=False)
-    if data.status_code == 200:
-        after = data.json().get("data").get("after")
-        data = data.json().get("data").get("children")
-        for entry in data:
-            hot_list.append(entry.get("data").get("title"))
-        if after:
-            recurse(subreddit, hot_list, after)
-        return (hot_list)
-    else:
+    headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 12; SM-S906N\
+               Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML,\
+               like Gecko) Version/4.0 Chrome/80.0.3987.119 Mobile\
+               Safari/537.36'
+               }
+    parameters = {
+        'after': after,
+        'count': count,
+        'limit': 100
+    }
+    try:
+        data = requests.get(
+            'https://www.reddit.com/r/{}/hot/.json'.format(subreddit),
+            headers=headers, params=parameters, allow_redirects=False).json()
+        hot_list.extend([post['data']['title']
+                        for post in data['data']["children"]])
+        if data['data']['after']:
+            return recurse(subreddit, hot_list,
+                           after=data['data']['after'],
+                           count=count+data['data']['dist'])
+        else:
+            return hot_list
+    except Exception:
         return None
