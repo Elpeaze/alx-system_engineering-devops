@@ -27,7 +27,8 @@ def count_words(subreddit, word_list, kwargs={}, after=None):
                             kwargs[element] = 1
         if after:
             count_words(subreddit, word_list, kwargs, after)
-        sorted_dict = {k: v for k, v in sorted(kwargs.items(), key=lambda item: item[1])}
-        [print("{}: {})".format(k, v)) for k, v in sorted_dict.items()]
+        else:
+            sorted_dict = {k: v for k, v in sorted(kwargs.items(), key=lambda item: item[1])}
+            [print("{}: {})".format(k, v)) for k, v in sorted_dict.items()]
     else:
         return None
