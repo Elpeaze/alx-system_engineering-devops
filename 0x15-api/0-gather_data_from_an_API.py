@@ -8,16 +8,26 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = "https://jsonplaceholder.typicode.com"
-    user_id = int(sys.argv[1])
-    user_endp = "{}/users/{}".format(url, user_id)
-    name = requests.get(user_endp).json().get("name")
-    tasks_endp = "{}/todos".format(url)
-    tasks = requests.get(tasks_endp).json()
-    tasks_user = [task for task in tasks if task.get("userId") == user_id]
-    tasks_completed = [task for task in tasks_user if task.get("completed")]
-    print("Employee {} is done with tasks({}/{}):"
-          .format(name, len(tasks_completed), len(tasks_user)))
+    employee_id = sys.argv[1]
+    user = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'
+        .format(employee_id)).json()
+    all_todos = requests.get(
+        'https://jsonplaceholder.typicode.com/todos').json()
+    user_todos = [todo for todo in all_todos if user['id'] == todo['userId']]
 
-    for task in tasks_completed:
-        print("\t{}".format(task.get("title")))
+    number_of_tasks = 0
+    for todo in user_todos:
+        number_of_tasks += 1
+
+    number_of_task_done = 0
+    for todo in user_todos:
+        if todo['completed'] is True:
+            number_of_task_done += 1
+
+    print('Employee {} is done with tasks({}/{}):'
+          .format(user['name'], number_of_task_done, number_of_tasks)
+          )
+    for todo in user_todos:
+        if todo['completed'] is True:
+            print('\t {}'.format(todo['title']))
