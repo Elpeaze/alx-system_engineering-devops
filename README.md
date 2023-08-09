@@ -1,1 +1,1 @@
-# **mysql*
+About shell I/O redirections
