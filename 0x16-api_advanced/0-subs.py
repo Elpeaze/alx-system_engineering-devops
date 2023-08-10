@@ -2,6 +2,7 @@
 
 """
 A function that queries the reddit API
+and returns the number of subscribers
 """
 
 import requests
