@@ -36,11 +36,11 @@ defaults
 
 frontend http_front
         bind *:80
-        bind *:443 ssl crt /etc/haproxy/certs/www.devniyi.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.tranex.tech.pem
         redirect scheme https if !{ ssl_fc }
         default_backend http_back
         
 backend http_back
         balance roundrobin
-        server 135836-web-01 54.146.81.195:80 check
-        server 135836-web-02 34.224.6.180:80 check
+        server 145153-web-01 100.25.28.76:80 check
+        server 145153-web-02 100.24.206.19:80 check
