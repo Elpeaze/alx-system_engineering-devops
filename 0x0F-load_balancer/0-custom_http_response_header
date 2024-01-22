@@ -5,9 +5,12 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
+<<<<<<< HEAD
 # configure nginx to listen on port 80
 ufw allow 'Nginx HTTP'
 
+=======
+>>>>>>> e70f178 (Resolve conflicts)
 # Creating Sample Page
 echo "Hello World!" > /var/www/html/index.html
 
@@ -20,7 +23,11 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
+<<<<<<< HEAD
 # Nginx HTTP Custom Header Response
+=======
+# HTTP response header configuration
+>>>>>>> e70f178 (Resolve conflicts)
 sudo sed -i '/^http {/a \\tadd_header X-Served-By $hostname;' /etc/nginx/nginx.conf
 
 # Restart Nginx
