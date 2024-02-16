@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 """A function that queries the reddit API, returns subscribers."""
 
 import requests
