@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""A function that queries the reddit API, returns subscribers."""
-
+"""Queries the `Reddit API`, returns the number of subscribers
+    of a subreddit
+"""
 import requests
 
 
 def number_of_subscribers(subreddit):
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {"User-Agent": "Mozilla/5.0"}
+    header = {"User-Agent": "Mozilla/5.0"}
 
     data = requests.get(url, headers=header, allow_redirects=False)
 
