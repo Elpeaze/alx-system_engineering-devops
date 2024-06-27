@@ -1,4 +1,5 @@
+# Ensure the nginx default configuration file is present with the specified content
 file { '/etc/default/nginx':
-  ensure => file,
-  content => "ULIMIT='-n 2035'\n",
+  ensure  => present,
+  content => "ULIMIT='-n 4069'\n",
 }
