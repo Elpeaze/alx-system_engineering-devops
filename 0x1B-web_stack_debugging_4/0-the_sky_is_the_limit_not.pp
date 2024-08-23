@@ -2,6 +2,6 @@
 
 file { '/etc/default/nginx':
   ensure  => present,
-  content => "ULIMIT='-n 4069'\n",
+  content => "ULIMIT='-n 1024'\n",
   notify  => Service['nginx'],
 }
